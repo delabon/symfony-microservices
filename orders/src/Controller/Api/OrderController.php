@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Controller\Api;
 
 use CommonLibrary\Message\OrderCreatedMessage;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
