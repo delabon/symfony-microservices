@@ -22,6 +22,8 @@ docker compose up -d
 
 ### How to use
 
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/VU3Tj48TF0o/0.jpg)](https://www.youtube.com/watch?v=VU3Tj48TF0o)
+
 ```sh
 # Notifications
 php bin/console messenger:consume async -vv
