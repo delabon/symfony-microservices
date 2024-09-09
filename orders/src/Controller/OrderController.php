@@ -4,17 +4,21 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Message\OrderCreatedMessage;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class OrderController extends AbstractController
 {
-    public function __construct(private readonly HttpClientInterface $httpClient)
-    {
+    public function __construct(
+        private readonly HttpClientInterface $httpClient,
+        private readonly MessageBusInterface $messageBus
+    ) {
     }
 
     #[Route('/api/orders', name: 'orders_store', methods: ['POST'])]
@@ -29,6 +33,8 @@ class OrderController extends AbstractController
             'user_id' => $user['id'],
             'status' => 'completed'
         ];
+
+        $this->messageBus->dispatch(new OrderCreatedMessage($order['id'], $user['id'], $user['email']));
 
         return $this->json($order, Response::HTTP_CREATED);
     }
