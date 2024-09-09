@@ -12,7 +12,27 @@ This project demonstrates the use of asynchronous, event-driven Symfony microser
 - RabbitMQ
 - Docker
 - Composer
+- Mailpit
 
 ### How to setup
 
+```sh
+docker compose up -d
+```
+
 ### How to use
+
+```sh
+cd notifications
+php bin/console messenger:consume async -vv
+cd ../users
+symfony server:start --port=8001
+cd ../orders
+symfony server:start --port=8002
+```
+
+Open Mailpit: http://localhost:8025/
+
+Open Postman and send a post request with a userId=34 to http://localhost:8002/api/orders
+
+Now, check out your inbox: http://localhost:8025/
