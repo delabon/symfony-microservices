@@ -23,11 +23,13 @@ docker compose up -d
 ### How to use
 
 ```sh
-cd notifications
+# Notifications
 php bin/console messenger:consume async -vv
-cd ../users
+
+# Users
 symfony server:start --port=8001
-cd ../orders
+
+# Orders
 symfony server:start --port=8002
 ```
 
