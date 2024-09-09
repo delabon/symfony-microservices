@@ -1,0 +1,11 @@
+{
+    "name": "vendor/common-library",
+    "description": "Shared library for common messages",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "CommonLibrary\\": "src/"
+        }
+    },
+    "require": {}
+}

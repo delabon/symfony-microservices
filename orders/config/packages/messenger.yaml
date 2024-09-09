@@ -10,7 +10,7 @@ framework:
             async: '%env(MESSENGER_TRANSPORT_DSN)%'
 
         routing:
-            'App\Message\OrderMessage': async
+            'CommonLibrary\Message\OrderCreatedMessage': async
 
 # when@test:
 #    framework:

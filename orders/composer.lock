@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cab5122f176b08d7348ebd03881bfc1c",
+    "content-hash": "9f6477791bdbf75d8075cdd9604a43b7",
     "packages": [
         {
             "name": "psr/cache",
@@ -2857,12 +2857,33 @@
                 }
             ],
             "time": "2024-08-12T09:59:40+00:00"
+        },
+        {
+            "name": "vendor/common-library",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../common-library",
+                "reference": "e31b2a4e47a917577ac47d3a29b013f167672309"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CommonLibrary\\": "src/"
+                }
+            },
+            "description": "Shared library for common messages",
+            "transport-options": {
+                "relative": true
+            }
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "vendor/common-library": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

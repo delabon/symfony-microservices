@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\MessageHandler;
 
-use App\Message\OrderCreatedMessage;
+use CommonLibrary\Message\OrderCreatedMessage;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 use Symfony\Component\Notifier\Notification\Notification;
 use Symfony\Component\Notifier\NotifierInterface;
@@ -19,6 +19,7 @@ class OrderCreatedMessageHandler
 
     public function __invoke(OrderCreatedMessage $message)
     {
+
         $orderId = $message->getOrderId();
         $userEmail = $message->getUserEmail();
 

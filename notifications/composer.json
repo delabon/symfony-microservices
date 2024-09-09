@@ -7,6 +7,7 @@
         "php": ">=8.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "symfony/amqp-messenger": "7.1.*",
         "symfony/console": "7.1.*",
         "symfony/dotenv": "7.1.*",
         "symfony/flex": "^2",
@@ -15,7 +16,8 @@
         "symfony/messenger": "7.1.*",
         "symfony/notifier": "7.1.*",
         "symfony/runtime": "7.1.*",
-        "symfony/yaml": "7.1.*"
+        "symfony/yaml": "7.1.*",
+        "vendor/common-library": "dev-master"
     },
     "config": {
         "allow-plugins": {
@@ -65,5 +67,11 @@
             "allow-contrib": false,
             "require": "7.1.*"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../common-library"
+        }
+    ]
 }

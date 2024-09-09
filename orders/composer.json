@@ -15,7 +15,8 @@
         "symfony/http-client": "7.1.*",
         "symfony/messenger": "7.1.*",
         "symfony/runtime": "7.1.*",
-        "symfony/yaml": "7.1.*"
+        "symfony/yaml": "7.1.*",
+        "vendor/common-library": "dev-master"
     },
     "config": {
         "allow-plugins": {
@@ -65,5 +66,11 @@
             "allow-contrib": false,
             "require": "7.1.*"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../common-library"
+        }
+    ]
 }
